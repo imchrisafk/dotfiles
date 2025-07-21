@@ -1,0 +1,61 @@
+# Starship configuration file
+# ~/.config/starship.toml
+
+# Set the format of the prompt
+format = """
+[╭─](bold green)$username$directory$git_branch$git_state$git_status$cmd_duration
+[╰─➤ ](bold green)"""
+
+# Disable the blank line at the start of the prompt
+add_newline = true
+
+# Username module
+[username]
+show_always = true
+style_user = "blue bold"
+style_root = "red bold"
+format = "[$user]($style):"
+
+# Directory module
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = "cyan bold"
+format = "[$path]($style) "
+
+# Git branch module
+[git_branch]
+style = "purple"
+format = "[$symbol$branch]($style) "
+
+# Git status module
+[git_status]
+style = "red"
+format = "[$all_status$ahead_behind]($style) "
+conflicted = "⚔️ "
+ahead = "🚀 "
+behind = "🐢 "
+diverged = "🔀 "
+untracked = "📂 "
+stashed = "📦 "
+modified = "📝 "
+staged = "✅ "
+renamed = "🔄 "
+deleted = "🗑️ "
+
+# Command duration module
+[cmd_duration]
+min_time = 500
+style = "yellow"
+format = "took [$duration]($style)"
+
+# Disable modules you don't need (uncomment to disable)
+# [python]
+# disabled = true
+# [node]
+# disabled = true
+
+# Add custom symbols or styles as needed
+[character]
+success_symbol = "[➤](bold green)"
+error_symbol = "[➤](bold red)"
