@@ -4,7 +4,7 @@
 # Set the format of the prompt
 format = """
 [╭─](bold green)$username$directory$git_branch$git_state$git_status$python$rust$cmd_duration$battery
-[╰─➤ ](bold green)"""
+[╰─$character](bold green)"""
 
 # Disable the blank line at the start of the prompt
 add_newline = true
