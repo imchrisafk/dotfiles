@@ -1,0 +1,11 @@
+# Custom aliases
+alias rmexif="exiftool -all= "
+alias rm="gio trash"
+alias ls="eza"
+alias cat="bat"
+alias cd="z"
+alias vim="nvim"
+alias map="telnet mapscii.me"
+alias pubip="curl https://ifconfig.me"
+alias weather-detroit="curl https://wttr.in/detroit_michigan?u"
+alias weather-ann-arbor="curl https://wttr.in/ann-arbor?u"
