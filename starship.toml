@@ -3,7 +3,7 @@
 
 # Set the format of the prompt
 format = """
-[╭─](bold green)$username$directory$git_branch$git_state$git_status$cmd_duration
+[╭─](bold green)$username$directory$git_branch$git_state$git_status$python$rust$cmd_duration$battery
 [╰─➤ ](bold green)"""
 
 # Disable the blank line at the start of the prompt
@@ -43,19 +43,35 @@ staged = "✅ "
 renamed = "🔄 "
 deleted = "🗑️ "
 
+# Python: Bright yellow with snake emoji
+[python]
+style = "bright_yellow bold"
+format = "[🐍 $version](bold bright_yellow) "
+detect_extensions = ["py"]
+detect_files = [".python-version", "Pipfile", "requirements.txt", "pyproject.toml"]
+
+# Rust: Red with crab emoji
+[rust]
+style = "red bold"
+format = "[🦀 $version](bold red) "
+detect_extensions = ["rs"]
+detect_files = ["Cargo.toml"]
+
 # Command duration module
 [cmd_duration]
 min_time = 500
 style = "yellow"
 format = "took [$duration]($style)"
 
-# Disable modules you don't need (uncomment to disable)
-# [python]
-# disabled = true
-# [node]
-# disabled = true
+# Battery: Bright green for battery status
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "🔌 "
+format = "[$symbol$percentage](bold bright_green) "
 
-# Add custom symbols or styles as needed
+# Character: Success/error symbols with ANSI colors
 [character]
 success_symbol = "[➤](bold green)"
 error_symbol = "[➤](bold red)"
+vicmd_symbol = "[V](bold magenta)"  # For vi-mode in Bash/Zsh
