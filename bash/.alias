@@ -1,7 +1,7 @@
 # Custom aliases
 alias rmexif="exiftool -all= "
 alias rm="gio trash"
-alias ls="eza"
+alias ls="eza -lah"
 alias cat="bat"
 alias cd="z"
 alias vim="nvim"
