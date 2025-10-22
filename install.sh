@@ -5,7 +5,6 @@
 # TODO:
 # - Ensure script runs properly irrespective of cd
 # - Use env vars where applicable
-# - Check if directories exist. If not create parents.
 # - Check if files exist, prompt user
 # - More verbose comments
 # - Some options, perhaps dry-run, verbose, etc
@@ -15,10 +14,12 @@ ln -s ./bash/.alias ~/.alias
 ln -s ./bash/.bashrc ~/.bashrc
 
 # mpv
+mkdir -p ~/.config/mpv
 ln -s ./mpv/input.conf ~/.config/mpv/input.conf
 ln -s ./mpv/mpv.conf ~/.config/mpv/mpv.conf
 
 # nvim
+mkdir -p ~/.config/nvim
 ln -s ./nvim/init.lua ~/.config/nvim/init.lua
 
 # starship
