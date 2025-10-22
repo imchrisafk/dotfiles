@@ -2,6 +2,14 @@
 
 # Creates symlinks for the various configuration files included in https://codeberg.org/chrisafk/dotfiles
 
+# TODO:
+# - Ensure script runs properly irrespective of cd
+# - Use env vars where applicable
+# - Check if directories exist. If not create parents.
+# - Check if files exist, prompt user
+# - More verbose comments
+# - Some options, perhaps dry-run, verbose, etc
+
 # bash
 ln -s ./bash/.alias ~/.alias
 ln -s ./bash/.bashrc ~/.bashrc
