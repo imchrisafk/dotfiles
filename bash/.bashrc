@@ -1,6 +1,9 @@
 # Add custom aliases
 test -s ~/.alias && . ~/.alias || true
 
+# Set default editor
+export EDITOR=nvim
+
 # Set NVim as manpager
 export MANPAGER='nvim +Man!'
 
