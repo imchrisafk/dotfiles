@@ -45,10 +45,10 @@ The script will:
 - Creates necessary directories automatically
 - Handles existing files/links with user prompts
 - Destructive operations require user confirmation
+- Ensures full path expansion for all files and directories
 
 **Yet to be implemented:**
 - Verifies source files exist prior to linking
-- Expands `~` to `$HOME` for correct paths
 
 ## Usage Notes
 
