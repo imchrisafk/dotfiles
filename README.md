@@ -38,7 +38,7 @@ The script will:
 - In the case of a preexisting config file present you with the following options:
     - Overwrite existing file(s)
     - Skip, leaving the existing file in place
-- An option to view diff between existing and proposed files will eventually be added.
+- An option to view diff between existing and proposed files will eventually be added
 
 ## Safety Features
 
