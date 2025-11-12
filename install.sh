@@ -8,27 +8,30 @@
 # - More verbose comments
 # - Some options, perhaps dry-run, etc
 
+# Get the absolute path to the directory containing this script
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # bash
-ln -vis ./bash/.alias ~/.alias
-ln -vis ./bash/.bashrc ~/.bashrc
+ln -vis "$REPO_DIR/bash/.alias" "$HOME/.alias"
+ln -vis "$REPO_DIR/bash/.bashrc" "$HOME/.bashrc"
 
 # konsole
-mkdir -vp ~/.local/share/konsole
-ln -vis ./konsole/Linux.colorscheme ~/.local/share/konsole/Linux.colorscheme
-ln -vis ./konsole/chrisafk.profile ~/.local/share/konsole/chrisafk.profile
+mkdir -vp "$HOME/.local/share/konsole"
+ln -vis "$REPO_DIR/konsole/Linux.colorscheme" "$HOME/.local/share/konsole/Linux.colorscheme"
+ln -vis "$REPO_DIR/konsole/chrisafk.profile" "$HOME/.local/share/konsole/chrisafk.profile"
 
-mkdir -vp ~/.config
-ln -vis ./konsole/konsolerc ~/.config/konsolerc
+mkdir -vp "$HOME/.config"
+ln -vis "$REPO_DIR/konsole/konsolerc" "$HOME/.config/konsolerc"
 
 # mpv
-mkdir -vp ~/.config/mpv
-ln -vis ./mpv/input.conf ~/.config/mpv/input.conf
-ln -vis ./mpv/mpv.conf ~/.config/mpv/mpv.conf
+mkdir -vp "$HOME/.config/mpv"
+ln -vis "$REPO_DIR/mpv/input.conf" "$HOME/.config/mpv/input.conf"
+ln -vis "$REPO_DIR/mpv/mpv.conf" "$HOME/.config/mpv/mpv.conf"
 
 # nvim
-mkdir -vp ~/.config/nvim
-ln -vis ./nvim/init.lua ~/.config/nvim/init.lua
+mkdir -vp "$HOME/.config/nvim"
+ln -vis "$REPO_DIR/nvim/init.lua" "$HOME/.config/nvim/init.lua"
 
 # starship
-mkdir -vp ~/.config
-ln -vis ./starship/starship.toml ~/.config/starship.toml
+mkdir -vp "$HOME/.config"
+ln -vis "$REPO_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
