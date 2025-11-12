@@ -1,6 +1,6 @@
 # dotfiles
 
-A collection of my personal configuration files. So far encompassing bash, mpv, neovim, and starship.
+A collection of my personal configuration files. So far encompassing bash, konsole, mpv, neovim, and starship.
 
 ## Repository Structure
 
@@ -12,6 +12,9 @@ Each application has a corresponding folder where its various configuration file
 |-------------|-----------------|
 | `bash/.alias` | `~/.alias` |
 | `bash/.bashrc` | `~/.bashrc` |
+| `konsole/Linux.colorscheme` | `~/.local/share/konsole/Linux.colorscheme` |
+| `konsole/chrisafk.profile` | `~/.local/share/konsole/chrisafk.profile` |
+| `konsole/konsolerc` | `~/.config/konsolerc` |
 | `mpv/input.conf` | `~/.config/mpv/input.conf` |
 | `mpv/mpv.conf` | `~/.config/mpv/mpv.conf` |
 | `nvim/init.lua` | `~/.config/nvim/init.lua` |
