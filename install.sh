@@ -10,17 +10,17 @@
 # - Some options, perhaps dry-run, verbose, etc
 
 # bash
-ln -s ./bash/.alias ~/.alias
-ln -s ./bash/.bashrc ~/.bashrc
+ln -vs ./bash/.alias ~/.alias
+ln -vs ./bash/.bashrc ~/.bashrc
 
 # mpv
-mkdir -p ~/.config/mpv
-ln -s ./mpv/input.conf ~/.config/mpv/input.conf
-ln -s ./mpv/mpv.conf ~/.config/mpv/mpv.conf
+mkdir -vp ~/.config/mpv
+ln -vs ./mpv/input.conf ~/.config/mpv/input.conf
+ln -vs ./mpv/mpv.conf ~/.config/mpv/mpv.conf
 
 # nvim
-mkdir -p ~/.config/nvim
-ln -s ./nvim/init.lua ~/.config/nvim/init.lua
+mkdir -vp ~/.config/nvim
+ln -vs ./nvim/init.lua ~/.config/nvim/init.lua
 
 # starship
-ln -s ./starship/starship.toml ~/.config/starship.toml
+ln -vs ./starship/starship.toml ~/.config/starship.toml
