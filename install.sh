@@ -6,7 +6,7 @@
 # - Ensure script runs properly irrespective of cd
 # - Use env vars where applicable
 # - More verbose comments
-# - Some options, perhaps dry-run, verbose, etc
+# - Some options, perhaps dry-run, etc
 
 # bash
 ln -vis ./bash/.alias ~/.alias
