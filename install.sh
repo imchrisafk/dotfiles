@@ -12,27 +12,41 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 H_CFG="$HOME/.config"
 H_LOC_SHR="$HOME/.local/share"
 
+# Permissions
+DIR_PERMS=0755
+FILE_PERMS=0644
+
+# Helper function
+create_link() {
+    local src="$1"
+    local dest="$2"
+
+    # Ensure source has correct file permissions
+    chmod -v "$FILE_PERMS" "$src"
+
+    # Create parent directory if needed
+    mkdir -vp "$(dirname "$dest")"
+    chmod -v "$DIR_PERMS" "$(dirname "$dest")"
+
+    # Create symlink (verbose, interactive, no-clobber if exists unless forced)
+    ln -vis "$src" "$dest"
+}
+
 # bash
-ln -vis "$REPO_DIR/bash/.alias" "$HOME/.alias"
-ln -vis "$REPO_DIR/bash/.bashrc" "$HOME/.bashrc"
+create_link "$REPO_DIR/bash/.alias" "$HOME/.alias"
+create_link "$REPO_DIR/bash/.bashrc" "$HOME/.bashrc"
 
 # konsole
-mkdir -vp "$H_LOC_SHR/konsole"
-ln -vis "$REPO_DIR/konsole/Linux.colorscheme" "$H_LOC_SHR/konsole/Linux.colorscheme"
-ln -vis "$REPO_DIR/konsole/chrisafk.profile" "$H_LOC_SHR/konsole/chrisafk.profile"
-
-mkdir -vp "$H_CFG"
-ln -vis "$REPO_DIR/konsole/konsolerc" "$H_CFG/konsolerc"
+create_link "$REPO_DIR/konsole/Linux.colorscheme" "$H_LOC_SHR/konsole/Linux.colorscheme"
+create_link "$REPO_DIR/konsole/chrisafk.profile" "$H_LOC_SHR/konsole/chrisafk.profile"
+create_link "$REPO_DIR/konsole/konsolerc" "$H_CFG/konsolerc"
 
 # mpv
-mkdir -vp "$H_CFG/mpv"
-ln -vis "$REPO_DIR/mpv/input.conf" "$H_CFG/mpv/input.conf"
-ln -vis "$REPO_DIR/mpv/mpv.conf" "$H_CFG/mpv/mpv.conf"
+create_link "$REPO_DIR/mpv/input.conf" "$H_CFG/mpv/input.conf"
+create_link "$REPO_DIR/mpv/mpv.conf" "$H_CFG/mpv/mpv.conf"
 
 # nvim
-mkdir -vp "$H_CFG/nvim"
-ln -vis "$REPO_DIR/nvim/init.lua" "$H_CFG/nvim/init.lua"
+create_link "$REPO_DIR/nvim/init.lua" "$H_CFG/nvim/init.lua"
 
 # starship
-mkdir -vp "$H_CFG"
-ln -vis "$REPO_DIR/starship/starship.toml" "$H_CFG/starship.toml"
+create_link "$REPO_DIR/starship/starship.toml" "$H_CFG/starship.toml"
