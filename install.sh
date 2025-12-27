@@ -36,6 +36,9 @@ create_link() {
 create_link "$REPO_DIR/bash/.alias" "$HOME/.alias"
 create_link "$REPO_DIR/bash/.bashrc" "$HOME/.bashrc"
 
+# bleachbit
+create_link "$REPO_DIR/bleachbit/bleachbit.ini" "$H_CFG/bleachbit/bleachbit.ini"
+
 # konsole
 create_link "$REPO_DIR/konsole/Linux.colorscheme" "$H_LOC_SHR/konsole/Linux.colorscheme"
 create_link "$REPO_DIR/konsole/chrisafk.profile" "$H_LOC_SHR/konsole/chrisafk.profile"
