@@ -12,6 +12,7 @@ Each application has a corresponding folder where its various configuration file
 |-------------|-----------------|
 | `bash/.alias` | `~/.alias` |
 | `bash/.bashrc` | `~/.bashrc` |
+| `bleachbit/bleachbit.ini` | `~/.config/bleachbit/bleachbit.ini` |
 | `konsole/Linux.colorscheme` | `~/.local/share/konsole/Linux.colorscheme` |
 | `konsole/chrisafk.profile` | `~/.local/share/konsole/chrisafk.profile` |
 | `konsole/konsolerc` | `~/.config/konsolerc` |
