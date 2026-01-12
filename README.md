@@ -1,6 +1,6 @@
 # dotfiles
 
-A collection of my personal configuration files. So far encompassing bash, konsole, mpv, neovim, and starship.
+A collection of my personal configuration files. So far encompassing bash, bleachbit, konsole, mpv, neovim, and starship.
 
 ## Repository Structure
 
