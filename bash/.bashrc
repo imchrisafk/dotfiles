@@ -1,6 +1,9 @@
 # Add custom aliases
 test -s ~/.alias && . ~/.alias || true
 
+# Add custom function definitions
+test -s ~/.functions && . ~/.functions || true
+
 # Set default editor
 export EDITOR=nvim
 
