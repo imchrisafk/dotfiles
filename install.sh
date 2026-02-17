@@ -34,6 +34,7 @@ create_link() {
 
 # bash
 create_link "$REPO_DIR/bash/.alias" "$HOME/.alias"
+create_link "$REPO_DIR/bash/.functions" "$HOME/.functions"
 create_link "$REPO_DIR/bash/.bashrc" "$HOME/.bashrc"
 
 # bleachbit
