@@ -29,7 +29,13 @@ Each application has a corresponding folder where its various configuration file
     git clone https://codeberg.org/chrisafk/dotfiles.git
     cd dotfiles
     ```
-2. **Run the installation script:**
+
+2. **Make the installation script executable (if not already):**
+    ```bash
+    chmod +x install.sh
+    ```
+
+3. **Run the installation script:**
     ```bash
     ./install.sh
     ```
@@ -37,6 +43,7 @@ Each application has a corresponding folder where its various configuration file
 The script will:
 - Create symbolic links from repository files to their proper locations
 - Automatically create necessary parent directories
+- Set appropriate permissions on source files (0644) and target directories (0755)
 - In the case of a preexisting config file present you with the following options:
     - Overwrite existing file(s)
     - Skip, leaving the existing file in place
@@ -55,6 +62,7 @@ The script will:
 - Run the script from the **root of the cloned repository**
 - The script is idempotent - you can run it multiple times safely
 - Existing configurations are preserved unless you choose to overwrite
+- The script requires bash and standard Unix utilities (e.g., ln, chmod, mkdir)
 
 ## License
 
