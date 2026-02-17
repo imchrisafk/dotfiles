@@ -1,0 +1,44 @@
+conv720() {
+    if [[ -z "$1" ]]; then
+        echo "Usage: conv720 <input_video> [output_video.mp4]"
+        echo "  Converts video to H.264 + AAC MP4"
+        echo "  Max resolution: 720p (handles both landscape and portrait)"
+        echo "  Video bitrate: 2M | Audio bitrate: 128k"
+        return 1
+    fi
+
+    local input="$1"
+    local output="$2"
+
+    # Check input exists
+    if [[ ! -f "$input" ]]; then
+        echo "Error: Input file not found → $input"
+        return 1
+    fi
+
+    # Auto-generate output name if not provided
+    if [[ -z "$output" ]]; then
+        local base="${input%.*}"           # remove extension
+        output="${base}_conv_h264.mp4"
+    fi
+
+    echo "Starting conversion"
+    echo "Input : $input"
+    echo "Output: $output"
+
+    ffmpeg -i "$input" \
+        -c:v libx264 \
+        -b:v 2M \
+        -vf "scale=1280:1280:force_original_aspect_ratio=decrease:force_divisible_by=2" \
+        -c:a aac \
+        -b:a 128k \
+        -preset medium \
+        -movflags +faststart \
+        -y "$output"
+
+    if [[ $? -eq 0 ]]; then
+        echo "Conversion finished: $output"
+    else
+        echo "Conversion failed."
+    fi
+}
