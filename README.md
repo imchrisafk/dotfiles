@@ -48,8 +48,6 @@ The script will:
 - Handles existing files/links with user prompts
 - Destructive operations require user confirmation
 - Ensures full path expansion for all files and directories
-
-**Yet to be implemented:**
 - Verifies source files exist prior to linking
 
 ## Usage Notes

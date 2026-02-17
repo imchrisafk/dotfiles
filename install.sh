@@ -21,6 +21,12 @@ create_link() {
     local src="$1"
     local dest="$2"
 
+    # Check if source file exists
+    if [ ! -f "$src" ]; then
+        echo "Error: Source file $src does not exist. Skipping."
+        return 1
+    fi
+
     # Ensure source has correct file permissions
     chmod -v "$FILE_PERMS" "$src"
 
