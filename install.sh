@@ -37,8 +37,10 @@ create_link() {
     chmod -v "$FILE_PERMS" "$src"
 
     # Create parent directory if needed
-    mkdir -vp "$(dirname "$dest")"
-    chmod -v "$DIR_PERMS" "$(dirname "$dest")"
+    if [ ! -d "$dest" ]; then
+        mkdir -vp "$(dirname "$dest")"
+        chmod -v "$DIR_PERMS" "$(dirname "$dest")"
+    fi
 
     # Create symlink (verbose, interactive, no-clobber if exists unless forced)
     ln -vis "$src" "$dest"
