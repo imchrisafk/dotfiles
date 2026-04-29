@@ -9,8 +9,14 @@
 
 # Paths
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-H_CFG="$HOME/.config"
-H_LOC_SHR="$HOME/.local/share"
+
+if [[ -z "$XDG_CONFIG_HOME" || "$XDG_CONFIG_HOME" != /* ]]; then
+    XDG_CONFIG_HOME="$HOME/.config"
+fi
+
+if [[ -z "$XDG_DATA_HOME" || "$XDG_DATA_HOME" != /* ]]; then
+    XDG_DATA_HOME="$HOME/.local/share"
+fi
 
 # Permissions
 DIR_PERMS=0755
@@ -44,19 +50,19 @@ create_link "$REPO_DIR/bash/.functions" "$HOME/.functions"
 create_link "$REPO_DIR/bash/.bashrc" "$HOME/.bashrc"
 
 # bleachbit
-create_link "$REPO_DIR/bleachbit/bleachbit.ini" "$H_CFG/bleachbit/bleachbit.ini"
+create_link "$REPO_DIR/bleachbit/bleachbit.ini" "$XDG_CONFIG_HOME/bleachbit/bleachbit.ini"
 
 # konsole
-create_link "$REPO_DIR/konsole/Linux.colorscheme" "$H_LOC_SHR/konsole/Linux.colorscheme"
-create_link "$REPO_DIR/konsole/chrisafk.profile" "$H_LOC_SHR/konsole/chrisafk.profile"
-create_link "$REPO_DIR/konsole/konsolerc" "$H_CFG/konsolerc"
+create_link "$REPO_DIR/konsole/Linux.colorscheme" "$XDG_DATA_HOME/konsole/Linux.colorscheme"
+create_link "$REPO_DIR/konsole/chrisafk.profile" "$XDG_DATA_HOME/konsole/chrisafk.profile"
+create_link "$REPO_DIR/konsole/konsolerc" "$XDG_CONFIG_HOME/konsolerc"
 
 # mpv
-create_link "$REPO_DIR/mpv/input.conf" "$H_CFG/mpv/input.conf"
-create_link "$REPO_DIR/mpv/mpv.conf" "$H_CFG/mpv/mpv.conf"
+create_link "$REPO_DIR/mpv/input.conf" "$XDG_CONFIG_HOME/mpv/input.conf"
+create_link "$REPO_DIR/mpv/mpv.conf" "$XDG_CONFIG_HOME/mpv/mpv.conf"
 
 # nvim
-create_link "$REPO_DIR/nvim/init.lua" "$H_CFG/nvim/init.lua"
+create_link "$REPO_DIR/nvim/init.lua" "$XDG_CONFIG_HOME/nvim/init.lua"
 
 # starship
-create_link "$REPO_DIR/starship/starship.toml" "$H_CFG/starship.toml"
+create_link "$REPO_DIR/starship/starship.toml" "$XDG_CONFIG_HOME/starship.toml"
