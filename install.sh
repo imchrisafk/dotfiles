@@ -19,7 +19,7 @@ if [[ -z "$XDG_DATA_HOME" || "$XDG_DATA_HOME" != /* ]]; then
 fi
 
 # Permissions
-DIR_PERMS=0755
+DIR_PERMS=0700
 FILE_PERMS=0644
 
 # Helper function
