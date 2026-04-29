@@ -37,7 +37,7 @@ create_link() {
     chmod -v "$FILE_PERMS" "$src"
 
     # Create parent directory if needed
-    if [ ! -d "$dest" ]; then
+    if [ ! -d "$(dirname "$dest")" ]; then
         mkdir -vp "$(dirname "$dest")"
         chmod -v "$DIR_PERMS" "$(dirname "$dest")"
     fi
