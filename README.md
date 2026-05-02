@@ -1,15 +1,67 @@
 # dotfiles
 
-A collection of my personal configuration files. So far encompassing bash, bleachbit, konsole, mpv, neovim, and starship.
+My personal configuration files.
 
-## Repository Structure
+## Contents
 
-Each application has a corresponding folder where its various configuration files are stored. All configuration files for a given application are stored in this folder without sub-directories, unless doing so would create some problem or ambiguity.
+- [What's Included](#whats-included)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration Locations](#configuration-locations)
 
-## Configuration File Locations
+---
 
-| Source Path | Target Location |
-|-------------|-----------------|
+## What's Included
+
+| App | Description |
+|---|---|
+| **bash** | Aliases, functions, and shell config |
+| **bleachbit** | System cleaner preferences |
+| **konsole** | Terminal profile and colour scheme |
+| **mpv** | Media player keybinds and settings |
+| **nvim** | Neovim config |
+| **starship** | Cross-shell prompt configuration |
+
+## Prerequisites
+
+Make sure the following are installed before running the install script:
+
+- `bash`
+- `git`
+- Any apps you want configs for (e.g. `neovim`, `mpv`, `starship`)
+
+## Installation
+
+1. **Clone the repository:**
+```bash
+   git clone https://codeberg.org/chrisafk/dotfiles.git
+   cd dotfiles
+```
+
+2. **Make the install script executable:**
+```bash
+   chmod +x install.sh
+```
+
+3. **Run the install script:**
+```bash
+   ./install.sh
+```
+
+The script creates symbolic links from the repo to their proper config locations. It will:
+
+- Automatically create any missing parent directories
+- Prompt you when a config file already exists, giving you the option to overwrite or skip
+- Set appropriate permissions on files (`0644`) and directories (`0755`)
+- Verify source files exist before linking
+
+> [!NOTE]
+> Run the script from the **root of the cloned repository**.
+
+## Configuration Locations
+
+| Source | Target |
+|---|---|
 | `bash/.alias` | `~/.alias` |
 | `bash/.bashrc` | `~/.bashrc` |
 | `bash/.functions` | `~/.functions` |
@@ -21,49 +73,3 @@ Each application has a corresponding folder where its various configuration file
 | `mpv/mpv.conf` | `~/.config/mpv/mpv.conf` |
 | `nvim/init.lua` | `~/.config/nvim/init.lua` |
 | `starship/starship.toml` | `~/.config/starship.toml` |
-
-## Installation
-
-1. **Clone the repository:**
-    ```bash
-    git clone https://codeberg.org/chrisafk/dotfiles.git
-    cd dotfiles
-    ```
-
-2. **Make the installation script executable (if not already):**
-    ```bash
-    chmod +x install.sh
-    ```
-
-3. **Run the installation script:**
-    ```bash
-    ./install.sh
-    ```
-
-The script will:
-- Create symbolic links from repository files to their proper locations
-- Automatically create necessary parent directories
-- Set appropriate permissions on source files (0644) and target directories (0755)
-- In the case of a preexisting config file present you with the following options:
-    - Overwrite existing file(s)
-    - Skip, leaving the existing file in place
-- An option to view diff between existing and proposed files will eventually be added
-
-## Safety Features
-
-- Creates necessary directories automatically
-- Handles existing files/links with user prompts
-- Destructive operations require user confirmation
-- Ensures full path expansion for all files and directories
-- Verifies source files exist prior to linking
-
-## Usage Notes
-
-- Run the script from the **root of the cloned repository**
-- The script is idempotent - you can run it multiple times safely
-- Existing configurations are preserved unless you choose to overwrite
-- The script requires bash and standard Unix utilities (e.g., ln, chmod, mkdir)
-
-## License
-
-This project is licensed under the [GNU General Public License v3.0](LICENSE) - see the [LICENSE](LICENSE) file for details.
