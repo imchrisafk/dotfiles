@@ -1,0 +1,4 @@
+-f bestvideo+bestaudio/bestvideo/best/bestaudio
+--embed-thumbnail
+--embed-metadata
+-o "[%(extractor)s] %(title)s [%(id)s].%(ext)s"
