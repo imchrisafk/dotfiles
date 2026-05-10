@@ -60,3 +60,6 @@ create_link "$REPO_DIR/nvim/init.lua" "$H_CFG/nvim/init.lua"
 
 # starship
 create_link "$REPO_DIR/starship/starship.toml" "$H_CFG/starship.toml"
+
+#yt-dlp
+create_link "$REPO_DIR/yt-dlp/config" "$H_CFG/yt-dlp/config"
