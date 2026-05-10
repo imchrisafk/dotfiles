@@ -21,6 +21,7 @@ My personal configuration files.
 | **mpv** | Media player keybinds and settings |
 | **nvim** | Neovim config |
 | **starship** | Cross-shell prompt configuration |
+| **yt-dlp** | Video downloader settings |
 
 ## Prerequisites
 
@@ -73,3 +74,4 @@ The script creates symbolic links from the repo to their proper config locations
 | `mpv/mpv.conf` | `~/.config/mpv/mpv.conf` |
 | `nvim/init.lua` | `~/.config/nvim/init.lua` |
 | `starship/starship.toml` | `~/.config/starship.toml` |
+| `yt-dlp/config` | `~/.config/yt-dlp/config` |
